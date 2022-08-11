@@ -45,6 +45,10 @@ func TestHTTPProxyHandlerFunc(t *testing.T) {
 			name:  "proxy HTTP request",
 			isTLS: false,
 		},
+		{
+			name:  "proxy HTTPS request",
+			isTLS: true,
+		},
 	}
 
 	t.Parallel()
