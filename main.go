@@ -8,5 +8,5 @@ import (
 
 func main() {
 	simpleProxyHandler := http.HandlerFunc(proxy.HTTPProxyHandlerFunc)
-	http.ListenAndServe(":8080", simpleProxyHandler)
+	http.ListenAndServe(":44444", simpleProxyHandler)
 }
