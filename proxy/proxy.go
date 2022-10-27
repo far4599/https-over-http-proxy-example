@@ -20,8 +20,9 @@ func HTTPProxyHandlerFunc(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	for header := range w.Header() {
-		resp.Header.Add(header, w.Header().Get(header))
+	w.WriteHeader(resp.StatusCode)
+	for header := range resp.Header {
+		w.Header().Set(header, resp.Header.Get(header))
 	}
 
 	io.Copy(w, resp.Body)
